@@ -14,17 +14,18 @@ script:
 - cd $TRAVIS_BUILD_DIR/sdk
 - "./scripts/feeds update packages"
 - "./scripts/feeds install bzip2"
-- make package/eiskaltdcpp/download V=99
-- make package/eiskaltdcpp/prepare V=99
-- make package/eiskaltdcpp/compile V=99
-- ls -la $TRAVIS_BUILD_DIR/sdk/bin/ar71xx/packages/
+- "./scripts/feeds install boost >/dev/null 2>&1"
+- "make package/eiskaltdcpp/download V=s 2>&1 | while read line ; do printf '.'; done"
+- "make package/eiskaltdcpp/prepare V=s 2>&1 | while read line ; do printf '.'; done"
+- "make package/eiskaltdcpp/compile V=s 2>&1 | while read line ; do printf '.'; done"
+- ls -la $TRAVIS_BUILD_DIR/sdk/bin/*/packages/
 deploy:
   provider: releases
   api_key:
     secure: aIv0YwBtaiRLm/kOBVO2zomCUFsEBUkbeK5yxnP2SMEi+mNyTPdavkj3yFb9FLR4f5kCGN7SQJWSTBCgnYCbfeIHahwN7MpVvd7DlatOtv0OwC8qzHxuyKRGHV2fqcb4YmROghty0VuwHq+S4yGEHcdfMzfRjlXyh/mWkwbHg/rfgkDsIg8Om/LE+MOwxAHLwYC4vMi42+d2dRL+fzhUGbyd1nPPNw6FjsNoTOb5jdhZVlnl+NNbbx2/7gJ64ymNYU0ddFPwSiME8/lABAnUcJrQ0CGq4qKHYvaFwithkif0pK2kfSPaXeUJZohyAze7pXlAI00DPWjdVbp4DWsBJ8arqEwSrvsCUT9e8usj1lztDfVhF4U5+0H4jMSF7zkxFvBGKDuypcyJsisU9LZfN14aAykhj/v3zuCPTJ/jH4NeG0rRbbx9g7oHuj0nM052ndsRFhd+knw0ShDtma2B0FPxGxfJZH06iEJcKSAqBjAyDWPX9vcDzorCH/td0U4RJ27gBXWwuBrQN3E+opLRnkhYHMvT2aTfWCLVB3G3CGvwQVus+Y7UcSRDUOtpC5IsqZZ+L/E1KXR9kKOynq5rsnbDX/nzPW4pxgyMi2qlJcl+plbdXJuaa9DgaFRUMXus/terPg/rqxVeSyDk5jJtaUOeLk5XIxRzCHvIKLfa7qs=
   skip_cleanup: true
   file_glob: true
-  file: "$TRAVIS_BUILD_DIR/sdk/bin/ar71xx/packages/eiskaltdcpp_*.ipk"
+  file: "$TRAVIS_BUILD_DIR/sdk/bin/*/packages/eiskaltdcpp_*.ipk"
   on:
     tags: true
     all_branches: true
