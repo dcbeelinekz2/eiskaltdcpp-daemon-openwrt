@@ -15,9 +15,9 @@ script:
 - curl -LO http://sf.net/projects/eiskaltdcpp/files/Other/boost.tar.gz
 - cd $TRAVIS_BUILD_DIR/sdk
 - "./scripts/feeds update packages"
-- "make package/{libiconv,zlib,bzip2,gettext,openssl}/{configure,install}"
 - "make package/eiskaltdcpp/download V=99 "
 - "make package/eiskaltdcpp/prepare V=99"
+- "make package/{libiconv,zlib,bzip2,gettext,openssl}/{configure,install}"
 - "make package/eiskaltdcpp/compile V=99"
 - ls -la $TRAVIS_BUILD_DIR/sdk/bin/*/packages/
 deploy:

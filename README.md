@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kraiz/eiskaltdcpp-daemon-openwrt.svg?branch=master)](https://travis-ci.org/kraiz/eiskaltdcpp-daemon-openwrt)
+[![Build Status](https://travis-ci.org/makefu/eiskaltdcpp-daemon-openwrt.svg?branch=master)](https://travis-ci.org/makefu/eiskaltdcpp-daemon-openwrt)
 
 eiskaltdcpp-daemon-openwrt
 ==========================
