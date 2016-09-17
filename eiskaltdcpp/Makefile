@@ -46,8 +46,8 @@ CMAKE_OPTIONS = \
 	-DCMAKE_FIND_ROOT_PATH="$(STAGING_DIR)" \
 	-DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER \
 	-DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY \
-	-DCMAKE_CXX_FLAGS="-pipe -I${ICONV_PREFIX}/include -I${INTL_PREFIX}/include -fno-caller-saves -fhonour-copts -Wno-error=unused-but-set-variable -fpic -fomit-frame-pointer -Wall" \
-	-DCMAKE_C_FLAGS="-pipe -I${ICONV_PREFIX}/include -I${INTL_PREFIX}/include -fno-caller-saves -fhonour-copts -Wno-error=unused-but-set-variable -fpic -fomit-frame-pointer -Wall" \
+	-DCMAKE_CXX_FLAGS="-pipe -liconv -I${ICONV_PREFIX}/include -I${INTL_PREFIX}/include -fno-caller-saves -fhonour-copts -Wno-error=unused-but-set-variable -fpic -fomit-frame-pointer -Wall" \
+	-DCMAKE_C_FLAGS="-pipe -liconv -I${ICONV_PREFIX}/include -I${INTL_PREFIX}/include -fno-caller-saves -fhonour-copts -Wno-error=unused-but-set-variable -fpic -fomit-frame-pointer -Wall" \
 	-DICONV_LIBRARIES=${STAGING_DIR}/usr/lib \
 	-DICONV_INCLUDE_DIR=${ICONV_PREFIX}/include \
 	-DGETTEXT_INCLUDE_DIR="$(INTL_PREFIX)/include" \
