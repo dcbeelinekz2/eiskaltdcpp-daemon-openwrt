@@ -37,3 +37,13 @@
      pcre(cpp) (headers): ${PCRE_LIBRARIES} (${PCRE_INCLUDE_DIR})
      idna (headers): ${IDNA_LIBRARIES} (${IDNA_INCLUDE_DIR})
      ")
+--- a/eiskaltdcpp-daemon/CMakeLists.txt
++++ b/eiskaltdcpp-daemon/CMakeLists.txt
+@@ -69,6 +69,7 @@ list(APPEND LIBS
+         ${JSONRPCLIBS}
+         ${Boost_LIBRARIES}
+         ${ICONV_LIBRARIES}
++        pthread
+         )
+ 
+ target_link_libraries (${PROJECT_NAME} dcpp ${LIBS})
