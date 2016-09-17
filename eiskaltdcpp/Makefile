@@ -51,8 +51,7 @@ CMAKE_OPTIONS = \
 	-DICONV_LIBRARIES=${STAGING_DIR}/usr/lib \
 	-DICONV_INCLUDE_DIR=${ICONV_PREFIX}/include \
 	-DGETTEXT_INCLUDE_DIR="$(INTL_PREFIX)/include" \
-	-DCMAKE_PREFIX_PATH="$(STAGING_DIR)/" \
-	-DBoost_INCLUDE_DIR="$(STAGING_DIR)/usr/include"
+	-DCMAKE_PREFIX_PATH="$(STAGING_DIR)/"
 
 
 define Package/eiskaltdcpp/install
