@@ -9,7 +9,7 @@ PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=52af555638f7b1b4baa58b43be75985fcf82760e
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
-PKG_BUILD_DEPENDS:=zlib bzip2 gettext iconv
+PKG_BUILD_DEPENDS:=zlib bzip2 iconv
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -20,7 +20,7 @@ define Package/eiskaltdcpp
   CATEGORY:=Network
   TITLE:=Eiskalt DC++ Client
   URL:=https://github.com/eiskaltdcpp/eiskaltdcpp
-  DEPENDS:=+zlib +bzip2 +libopenssl +libpthread +libstdcpp +iconv +gettext
+  DEPENDS:=+zlib +bzip2 +libopenssl +libpthread +libstdcpp +iconv
 endef
 define Package/eiskaltdcpp/description
   EiskaltDC++ is a cross-platform program that uses the Direct Connect and ADC protocols
